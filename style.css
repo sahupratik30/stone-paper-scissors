@@ -1,0 +1,230 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;400;500;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Josefin Sans", sans-serif;
+}
+:root {
+  --gray: rgb(165, 165, 165);
+  --red: #e62649;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: aliceblue;
+}
+.score__container {
+  display: flex;
+  width: 50rem;
+  max-width: 95%;
+  justify-content: center;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  justify-content: space-evenly;
+}
+.score__container .score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.score__container .score h1 {
+  font-size: 2.5rem;
+  font-weight: 100;
+  color: var(--gray);
+}
+.score__container .score span {
+  font-size: 3rem;
+  font-weight: lighter;
+  color: #000;
+}
+.hand__container {
+  width: 60rem;
+  max-width: 95%;
+  margin: 5rem 0;
+  display: flex;
+  justify-content: space-around;
+}
+.hand__container div {
+  width: 30%;
+  height: 18rem;
+  border: 2px solid var(--gray);
+}
+.hand__container div img {
+  width: 18rem;
+  max-width: 90%;
+}
+.hand__container div.userHand,
+.hand__container.animate div.userHand {
+  position: relative;
+  overflow: hidden;
+}
+.hand__container div.userHand img,
+.hand__container.animate div.userHand img {
+  position: absolute;
+  top: 50%;
+  transform: translate(-15%, -50%);
+  -webkit-transform: translate(-15%, -50%);
+  -moz-transform: translate(-15%, -50%);
+  -ms-transform: translate(-15%, -50%);
+  -o-transform: translate(-15%, -50%);
+}
+.hand__container div.computerHand,
+.hand__container.animate div.computerHand {
+  position: relative;
+  overflow: hidden;
+}
+.hand__container div.computerHand img,
+.hand__container.animate div.computerHand img {
+  position: absolute;
+  top: 50%;
+  transform: translate(25%, -50%);
+  -webkit-transform: translate(25%, -50%);
+  -moz-transform: translate(25%, -50%);
+  -ms-transform: translate(25%, -50%);
+  -o-transform: translate(25%, -50%);
+}
+.hand__container.animate div.userHand img {
+  animation: userMove 0.5s linear 3;
+  -webkit-animation: userMove 0.5s linear 3;
+}
+.hand__container.animate div.computerHand img {
+  animation: computerMove 0.5s linear 3;
+  -webkit-animation: computerMove 0.5s linear 3;
+}
+@keyframes userMove {
+  0% {
+    transform: translate(-15%, -50%) rotate(0deg);
+    -webkit-transform: translate(-15%, -50%) rotate(0deg);
+    -moz-transform: translate(-15%, -50%) rotate(0deg);
+    -ms-transform: translate(-15%, -50%) rotate(0deg);
+    -o-transform: translate(-15%, -50%) rotate(0deg);
+    transform-origin: left top;
+  }
+  50% {
+    transform: translate(-15%, -50%) rotate(-15deg);
+    -webkit-transform: translate(-15%, -50%) rotate(-15deg);
+    -moz-transform: translate(-15%, -50%) rotate(-15deg);
+    -ms-transform: translate(-15%, -50%) rotate(-15deg);
+    -o-transform: translate(-15%, -50%) rotate(-15deg);
+    transform-origin: left top;
+  }
+  100% {
+    transform: translate(-15%, -50%) rotate(0deg);
+    -webkit-transform: translate(-15%, -50%) rotate(0deg);
+    -moz-transform: translate(-15%, -50%) rotate(0deg);
+    -ms-transform: translate(-15%, -50%) rotate(0deg);
+    -o-transform: translate(-15%, -50%) rotate(0deg);
+    transform-origin: left top;
+  }
+}
+.buttons {
+  width: 20rem;
+  max-width: 50%;
+  display: flex;
+  justify-content: space-around;
+}
+.buttons button {
+  padding: 1.5rem;
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--red);
+  border: none;
+  color: #fff;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.buttons svg {
+  width: 4rem;
+  height: 4rem;
+}
+.buttons svg:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  -o-transform: scale(1.05);
+  transition: 0.2s ease;
+  -webkit-transition: 0.2s ease;
+  -moz-transition: 0.2s ease;
+  -ms-transition: 0.2s ease;
+  -o-transition: 0.2s ease;
+}
+@keyframes computerMove {
+  0% {
+    transform: translate(25%, -50%) rotate(0deg);
+    -webkit-transform: translate(25%, -50%) rotate(0deg);
+    -moz-transform: translate(25%, -50%) rotate(0deg);
+    -ms-transform: translate(25%, -50%) rotate(0deg);
+    -o-transform: translate(25%, -50%) rotate(0deg);
+    transform-origin: right top;
+  }
+  50% {
+    transform: translate(25%, -50%) rotate(15deg);
+    -webkit-transform: translate(25%, -50%) rotate(15deg);
+    -moz-transform: translate(25%, -50%) rotate(15deg);
+    -ms-transform: translate(25%, -50%) rotate(15deg);
+    -o-transform: translate(25%, -50%) rotate(15deg);
+    transform-origin: right top;
+  }
+  100% {
+    transform: translate(25%, -50%) rotate(0deg);
+    -webkit-transform: translate(25%, -50%) rotate(0deg);
+    -moz-transform: translate(25%, -50%) rotate(0deg);
+    -ms-transform: translate(25%, -50%) rotate(0deg);
+    -o-transform: translate(25%, -50%) rotate(0deg);
+    transform-origin: right top;
+  }
+}
+@media screen and (max-width: 768px) {
+  .score__container {
+    padding: 0.8rem;
+  }
+  .score__container .score {
+    gap: 0.6rem;
+  }
+  .score__container .score h1 {
+    font-size: 2rem;
+  }
+  .score__container .score span {
+    font-size: 2.5rem;
+  }
+  .hand__container div {
+    height: 15rem;
+  }
+}
+@media screen and (max-width: 500px) {
+  .score__container {
+    padding: 0.6rem;
+  }
+  .score__container .score {
+    gap: 0.4rem;
+  }
+  .score__container .score h1 {
+    font-size: 1.5rem;
+  }
+  .score__container .score span {
+    font-size: 2rem;
+  }
+  .hand__container div img {
+    width: 10rem;
+  }
+  .buttons svg {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  .hand__container div {
+    height: 12rem;
+    width: 40%;
+  }
+}
